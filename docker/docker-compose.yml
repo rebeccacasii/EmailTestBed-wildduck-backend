@@ -1,0 +1,48 @@
+version: "3.7"
+services:
+    etb-wd-backend:
+        restart: unless-stopped
+        container_name: etb-wd-backend
+        build:
+            context: ../
+            dockerfile: ./docker/Dockerfile
+        # image: nodemailer/wildduck
+        network_mode: bridge
+        ports:
+            - "8080:8080"
+            - "143:143"
+            - "110:110"
+            - "993:993"
+            - "995:995"
+        depends_on:
+            - etb-wd-redis
+            - etb-wd-mongo
+        external_links:
+            - etb-wd-redis
+            - etb-wd-mongo
+        environment:
+            CMD_ARGS: 
+                --dbs.mongo=mongodb://etb-wd-mongo:27017/wildduck
+                --dbs.redis=redis://etb-wd-redis:6379/3
+                --api.host=0.0.0.0
+                --api.accessToken=a3d9a379a8093b167114dba76ade7653fa1ac6e5
+            # WILDDUCK_CONFIG: "/wildduck/config/default.toml"
+            WILDDUCK_CONFIG: "/wildduck/config/default-qa.toml"
+    etb-wd-redis:
+        container_name: etb-wd-redis
+        image: redis:alpine
+        network_mode: bridge
+        ports:
+            - "6379:6379"
+        restart: unless-stopped
+        volumes:
+            - /data
+    etb-wd-mongo:
+        container_name: etb-wd-mongo
+        image: mongo
+        network_mode: bridge
+        ports:
+            - "27017:27017"
+        restart: unless-stopped
+        volumes:
+            - /data/db

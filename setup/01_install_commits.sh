@@ -1,0 +1,16 @@
+#! /bin/bash
+
+OURNAME=01_install_commits.sh
+
+NODEREPO="node_14.x"
+MONGODB="4.2"
+CODENAME=`lsb_release -c -s`
+
+WILDDUCK_COMMIT="e7413df902ed93d41ee66e9cf56fedd95f8b5ab3"
+ZONEMTA_COMMIT="47f230b3189814f3c99194e9b2db4c5d4c609563" # zone-mta-template
+WEBMAIL_COMMIT="edd502485fe2a1bd9c9c685c306632ed097ebe5d"
+WILDDUCK_ZONEMTA_COMMIT="33c5c766edf85ab32c18b5f9deba843b3381acdc"
+WILDDUCK_HARAKA_COMMIT="699ddbce94e0e998b8b1ccdd333d72a2f71c7a2d"
+HARAKA_VERSION="2.8.25"
+
+echo -e "\n-- Executing ${ORANGE}${OURNAME}${NC} subscript --"
