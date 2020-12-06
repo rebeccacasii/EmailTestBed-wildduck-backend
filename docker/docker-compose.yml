@@ -36,7 +36,7 @@ services:
             - "6379:6379"
         restart: unless-stopped
         volumes:
-            - /data
+            - /data:/tmp
     etb-wd-mongo:
         container_name: etb-wd-mongo
         image: mongo
