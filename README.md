@@ -1,35 +1,81 @@
 # EmailTestBed-wildduck-backend
 
-This project...
+This is the backend project and it's based on wildduck project. The wildduck is a complete email suite. 
 
-- Long description
+## Tech stask
+- Main language, node.js
+- Rest - JOI 
+- Database layer - mongodb
+- Caching - redis
 
-Explain more about what is the code about
+## How to start
 
-- How to start
+You can run the project using the node.js (v14) installed in your machine or using docker / docker-compose
 
-step by step to install the code
 
-- How to run it
+# Run using node.js
 
-Where is the index or the first archive to run?
+1. First, donwload it from the https://nodejs.org/en/download/. It's compatible with node 12 and 14. Probably other versions
+will be compatible too but I didn't test.
+2. Other option to install node is using nvm (node version manager). This allow you easily switch between the nodejs versions. https://github.com/nvm-sh/nvm
+3. commands to build and run the aplication locally:
 
-Explain how to run locally and on server
+## Install the dependencies 
 
-- Example
+`npm install && npm run bowerdeps`
 
-Is there an archive with examples? Show here.
+## Run the application
 
-- Requirement
+`node server.js --config=/wildduck/config/default.toml`
 
-Is it necessary to install some software for it to run?
+4.If everything is ok, you can access the webapp on http://localhost:3000
 
-Is there a minimum of memory, windows, etc?
+----------
+# Run using Docker
 
-- Language
+## Installing docker and docker-compose
 
-What is the language you are using? English, spanish, portuguese?
+### Docker
 
-- Preview
+You should access https://docs.docker.com/get-docker/ and follow the instructions to install docker in your machine.
 
-Some printscreen of the software
+### Docker Compose
+
+Docker compose is used as container orchestrator. Basically it will define how the containers must be configured.
+
+To install, https://docs.docker.com/compose/install/
+
+### Running the project locally
+
+this command will build and run the application. The container name is `etb-wd-webmail`
+
+`docker-compose -f docker/docker-compose-local.yml up --build --force-recreate`
+
+Alternatively you can use the `-d` switch to run the project in daemon mode.
+
+`docker-compose -f docker/docker-compose-local.yml up --build --force-recreate -d`
+
+**Docker commands:**
+
+Check running containers:
+`docker ps`
+
+Check logs:
+`docker logs -f --tail 1000 etb-ed-webmail`
+
+Stop container:
+`docker stop etb-ed-webmail`
+
+Start container:
+`docker start etb-ed-webmail`
+
+Restart container:
+`docker restart etb-ed-webmail`
+
+# Language
+
+English
+
+# Preview
+
+

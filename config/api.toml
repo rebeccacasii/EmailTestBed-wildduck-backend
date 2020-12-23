@@ -8,7 +8,7 @@ secure=false
 
 # If set requires all API calls to have accessToken query argument with that value
 # http://localhost:8080/users?accessToken=somesecretvalue
-# accessToken="Wt1VdYnrXSwomPojlVlMW7Vd7sKF2UoB"
+accessToken="a3d9a379a8093b167114dba76ade7653fa1ac6e5"
 
 [accessControl]
 # If true then require a valid access token to perform API calls
@@ -20,10 +20,10 @@ enabled=false
 secret="a secret cat"
 
 # Generated access token TTL in seconds. Token TTL gets extended by this value every time the token is used. Defaults to 14 days
-tokenTTL=12096000000
+tokenTTL=1209600000000
 
 # Generated access token max lifetime in seconds. Defaults to 180 days
-tokenLifetime=15552000000
+tokenLifetime=1209600000000
 
 [roles]
 # @include "roles.json"
