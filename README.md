@@ -46,16 +46,17 @@ You can run the project using the node.js (v14) installed in your machine or usi
 will be compatible too but I didn't test.
 2. Other option to install node is using nvm (node version manager). This allow you easily switch between the nodejs versions. https://github.com/nvm-sh/nvm
 3. commands to build and run the aplication locally:
-4. If everything is ok, you can access the rest api on http://localhost:8080
 
-
-## Install the dependencies 
+#### Install the dependencies 
 
 `npm install --production`
 
-## Run the application
+#### Run the application
 
 `node server.js --config=config/default.toml`
+
+4. If everything is ok, you can access the rest api on http://localhost:8080
+
 
 ## Atention
 
