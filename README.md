@@ -46,6 +46,8 @@ You can run the project using the node.js (v14) installed in your machine or usi
 will be compatible too but I didn't test.
 2. Other option to install node is using nvm (node version manager). This allow you easily switch between the nodejs versions. https://github.com/nvm-sh/nvm
 3. commands to build and run the aplication locally:
+4. If everything is ok, you can access the rest api on http://localhost:8080
+
 
 ## Install the dependencies 
 
@@ -58,8 +60,6 @@ will be compatible too but I didn't test.
 ## Atention
 
 Using this method you will have to install mongodb and redis manually in you local environment.
-
-4.If everything is ok, you can access the rest api on http://localhost:8080
 
 ----------
 # Run using Docker
