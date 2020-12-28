@@ -42,7 +42,7 @@ services:
     etb-wd-mongo:
         container_name: etb-wd-mongo
         image: mongo:4.2
-        network_mode: host
+        network_mode: bridge
         ports:
             - "27017:27017"
         restart: unless-stopped
