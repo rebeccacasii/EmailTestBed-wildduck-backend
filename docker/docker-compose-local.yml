@@ -22,7 +22,7 @@ services:
 #            - etb-wd-mongo
         environment:
             CMD_ARGS: 
-                --dbs.mongo=mongodb://127.0.0.1:27017/wildduck
+                --dbs.mongo=mongodb://etb:ENlzPLlyv7@127.0.0.1:27017/wildduck
                 --dbs.redis=redis://127.0.0.1:6379/3
                 --api.host=0.0.0.0
                 --api.accessToken=a3d9a379a8093b167114dba76ade7653fa1ac6e5
@@ -41,10 +41,18 @@ services:
             - /data:/tmp
     etb-wd-mongo:
         container_name: etb-wd-mongo
-        image: mongo
+        image: mongo:4.2
         network_mode: host
         ports:
             - "27017:27017"
         restart: unless-stopped
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=etb
+            - MONGO_INITDB_ROOT_PASSWORD=ENlzPLlyv7
+            - MONGO_INITDB_DATABASE=wildduck
         volumes:
-            - /data/db
+            - ./mongo/001_create_users.js:/docker-entrypoint-initdb.d/001_create_users.js:ro
+            - etbmongodbdata:/data/db
+        command: ['--auth', '--bind_ip_all']
+volumes:
+  etbmongodbdata:
