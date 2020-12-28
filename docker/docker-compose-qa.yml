@@ -24,7 +24,7 @@ services:
             CMD_ARGS: 
                 --dbs.mongo=mongodb://etb:ENlzPLlyv7@etb-wd-mongo:27017/wildduck
                 --dbs.redis=redis://etb-wd-redis:6379/3
-                --api.host=etb-wd-backend
+                --api.host=0.0.0.0
                 --api.accessToken=a3d9a379a8093b167114dba76ade7653fa1ac6e5
             WILDDUCK_CONFIG: "/wildduck/config/default-qa.toml"
     etb-wd-redis:
