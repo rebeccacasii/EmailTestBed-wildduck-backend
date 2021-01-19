@@ -35,7 +35,7 @@ This allow create a company and list companies already created in the database. 
         "fileName": "{{lastName}}_{{personId}}_{{formType}}_{{fileExt}}",
         "reportBtLabel": "Report"
 }
-
+`
 #### **/a/person**
 
 This allow create a person that represents who will send the email also list persons already created in the database. Use the PUT operation to create a new person and the GET to list the persons available on DB.
@@ -75,6 +75,7 @@ Allow create the messages that will be sent do the user. PUT operation to create
 This is used to create the messages that will be send to a user. It expects a list os `steps` and each step requires an personId and a messageId to use as reference of these objects on database. The put operation will create a new script and the GET will list operations already available on db.
 
 ##### PUT SAMPLE
+`
 {
     "email": "etb@emailtestbed.xyz",
     "steps": [
@@ -109,7 +110,7 @@ This is used to create the messages that will be send to a user. It expects a li
             "formType": 1
         }
     ]
-}
+}`
 
 ## How to start
 
