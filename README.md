@@ -17,7 +17,6 @@ This is the backend project and it's based on wildduck project. The wildduck is 
 
 These endpoints are responsible to create the data used during the simulation.
 
-- This endpoints can be accessed through this postman collection. [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/967a0b1673b3812914e6#?env%5BETB_LOCAL%5D=W3sia2V5IjoiRVRCX0FQSV9IT1NUIiwidmFsdWUiOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJlbmFibGVkIjp0cnVlfV0=)
 #### **/a/company**
 
 This allow create a company and list companies already created in the database. Use the PUT opration to create a new company and the GET to list the companies available on DB.
