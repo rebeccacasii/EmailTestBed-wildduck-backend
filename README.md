@@ -21,18 +21,95 @@ These endpoints are responsible to create the data used during the simulation.
 
 This allow create a company and list companies already created in the database. Use the PUT opration to create a new company and the GET to list the companies available on DB.
 
+##### PUT SAMPLE
+`
+{
+        "companyName": "Cog Industries",
+        "companyDomain": "cogind.com",
+        "jobTitle": "coordinator1",
+        "form1Type": "scy clearence",
+        "form2Type": "legal",
+        "form3Type": "hire",
+        "fileExtNormal": "pdf",
+        "fileExtAttack": "exe",
+        "fileName": "{{lastName}}_{{personId}}_{{formType}}_{{fileExt}}",
+        "reportBtLabel": "Report"
+}
+
 #### **/a/person**
 
 This allow create a person that represents who will send the email also list persons already created in the database. Use the PUT operation to create a new person and the GET to list the persons available on DB.
 
+##### PUT SAMPLE
+`
+{
+    "email" : "u1@email.com",
+    "firstName" : "User 1",
+    "gender" : "FEMALE",
+    "lastName" : "lastName 1",
+    "salutation" : "Hi... {{firstName}} {{lastName}}",
+    "signature" : "Thanks",
+    "suspiciousFlag" : true,
+    "title" : "Mrs"
+}
+`
 
 #### **/a/message**
 
 Allow create the messages that will be sent do the user. PUT operation to create a new one and GET to list all messages on db.
 
+
+##### PUT SAMPLE
+`
+{
+    "subject" : "Subject 1 - Hi from {{firstName}}",
+    "body" : "{{firstName}} {{lastName}} forgot to give me {{hisher}} file",
+    "goal" : "D",
+    "suspiciousFlag" : false,
+    "voice" : "1"
+}
+`
+
 #### **/a/script**
 
 This is used to create the messages that will be send to a user. It expects a list os `steps` and each step requires an personId and a messageId to use as reference of these objects on database. The put operation will create a new script and the GET will list operations already available on db.
+
+##### PUT SAMPLE
+{
+    "email": "etb@emailtestbed.xyz",
+    "steps": [
+        {
+            "personId": "5fea0cf9a9e4a0b46c60253d",
+            "messageId": "5fea0d2fa9e4a0b46c60259e",
+            "attackFlag": true,
+            "formType": 1
+        },
+        {
+            "personId": "5fea0d01a9e4a0b46c602549",
+            "messageId": "5fea0d33a9e4a0b46c6025a9",
+            "attackFlag": false,
+            "formType": 2
+        },
+        {
+            "personId": "5fea0d0ba9e4a0b46c60255b",
+            "messageId": "5fea0d36a9e4a0b46c6025b1",
+            "attackFlag": true,
+            "formType": 1
+        },
+        {
+            "personId": "5fea0d18a9e4a0b46c602577",
+            "messageId": "5fea0d3aa9e4a0b46c6025bd",
+            "attackFlag": false,
+            "formType": 2
+        },
+        {
+            "personId": "5fea0d20a9e4a0b46c602583",
+            "messageId": "5fea0d3da9e4a0b46c6025bf",
+            "attackFlag": true,
+            "formType": 1
+        }
+    ]
+}
 
 ## How to start
 
